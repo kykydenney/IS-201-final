@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olympic Gymnast Exercise & Athlete Generator</title>
+    <style>
+        /* Body styles */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f2f2f2;
+            margin: 0;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        /* Top links - placed at top left */
+        .top-links {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 1.2em;
+        }
+
+        .top-links a {
+            text-decoration: none;
+            color: black;
+            margin-right: 20px;
+        }
+
+        .top-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Container for the form */
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        select, button {
+            font-size: 1em;
+            padding: 10px;
+            margin-bottom: 20px;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            font-size: 1.5em;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Links placed on the top left -->
+    <div class="top-links">
+        <a href="#">AI page</a> | 
+        <a href="fromscratch.html">Resume</a>
+    </div>
+
+    <!-- Main content -->
+    <div class="container">
+        <h1>What Olympic Gymnast Are You?</h1>
+        
+        <label for="gymnastEvent">Which gymnastics skill best describes you?</label>
+        <select id="gymnastEvent">
+            <option value="floor">Floor Exercise</option>
+            <option value="vault">Vault</option>
+            <option value="bars">Uneven Bars</option>
+            <option value="beam">Balance Beam</option>
+            <option value="allaround">All-Around Athlete</option>
+        </select>
+
+        <label for="strength">How important is strength for you?</label>
+        <select id="strength">
+            <option value="important">Important</option>
+            <option value="notImportant">Not that important</option>
+        </select>
+
+        <label for="flexibility">Are you flexible?</label>
+        <select id="flexibility">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+        
+        <button onclick="generateGymnast()">Generate My Gymnast Type</button>
+        
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function generateGymnast() {
+            const gymnastEvent = document.getElementById("gymnastEvent").value;
+            const strength = document.getElementById("strength").value;
+            const flexibility = document.getElementById("flexibility").value;
+
+            const gymnasts = [
+                "Simone Biles", "Nadia Comăneci", "Mary Lou Retton", "Aliya Mustafina", 
+                "Gabby Douglas", "Shannon Miller", "Kerri Strug", "Liukin Nastia", 
+                "Larisa Iordache", "Jade Carey"
+            ];
+
+            let eventOutcome = "";
+            let gymnastOutcome = "";
+
+            // Determine gymnastic event based on answers
+            if (gymnastEvent === "floor") {
+                eventOutcome = "You are a Floor Exercise Specialist! 🏅 You love acrobatic routines and are incredibly flexible!";
+            } else if (gymnastEvent === "vault") {
+                eventOutcome = "You are a Vault Champion! 🏆 You value precision and power in your routines!";
+            } else if (gymnastEvent === "bars") {
+                eventOutcome = "You are a Bars Expert! 🏅 Your power and focus on precision make you a natural on the uneven bars!";
+            } else if (gymnastEvent === "beam") {
+                eventOutcome = "You would excel as a Balance Beam Athlete! 🌟 You combine flexibility and strength to perform flawless routines!";
+            } else if (gymnastEvent === "allaround") {
+                eventOutcome = "You're an All-Around Athlete! 🤸 You have a balance of skills that could make you great in many gymnastics events!";
+            }
+
+            // Determine gymnast based on answers
+            if (strength === "important" && flexibility === "yes") {
+                gymnastOutcome = gymnasts[0];  // Simone Biles
+            } else if (strength === "important" && flexibility === "no") {
+                gymnastOutcome = gymnasts[5];  // Shannon Miller
+            } else if (flexibility === "yes" && strength === "notImportant") {
+                gymnastOutcome = gymnasts[9];  // Jade Carey
+            } else {
+                gymnastOutcome = gymnasts[3];  // Aliya Mustafina
+            }
+
+            // Display results
+            document.getElementById("result").textContent = `Event: ${eventOutcome} \n\nGymnast: You are most like ${gymnastOutcome}!`;
+        }
+    </script>
+
+</body>
+</html>

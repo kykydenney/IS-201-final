@@ -1,0 +1,128 @@
+/* ===============================
+   General Reset for All Elements
+   =============================== */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* ===============================
+   Body Styling
+   =============================== */
+body {
+    font-family: 'Arial', sans-serif; /* Font family */
+    font-size: 15px; /* Font size for body text */
+    color: rgb(6, 5, 6); /* Font color */
+    background-color: #f8c9d4; /* Light pink background */
+    line-height: 1.6; /* Line height */
+    padding: 20px; /* Padding for body */
+}
+
+/* ===============================
+   Header Styling
+   =============================== */
+.header {
+    background-color: #ffb3c1; /* Lighter pink for the header */
+    padding: 20px;
+    text-align: center;
+    position: relative; /* Added positioning */
+}
+
+.header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 1.2rem;
+}
+
+/* ===============================
+   Content Block Styling
+   =============================== */
+.content {
+    background-color: #ffffff; /* White background for content blocks */
+    padding: 20px;
+    margin: 20px 0;
+    margin-left: 50px; /* Added larger margin on the left side */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative; /* Added positioning */
+}
+
+.content h2 {
+    font-size: 1.8rem;
+    color: #333333; /* Darker font color for headings */
+    margin-bottom: 10px;
+}
+
+.content p,
+.content ul {
+    font-size: 1rem;
+    color: #555555; /* Slightly lighter black for paragraph text */
+}
+
+.content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.content ol {
+    padding-left: 20px; /* Ensures proper indentation for ordered list */
+}
+
+/* ===============================
+   Footer Styling
+   =============================== */
+.footer {
+    background-color: #ffb3c1; /* Same pink as header */
+    padding: 20px;
+    text-align: center;
+    margin-top: 30px;
+    position: relative; /* Added positioning */
+}
+
+.footer p {
+    font-size: 1.2rem;
+}
+
+.footer a {
+    color: #000000; /* Black link color */
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* ===============================
+   Link Styling
+   =============================== */
+a {
+    font-size: 14px;
+    font-style: italic;
+    font-weight: normal;
+    color: rgb(12, 11, 12);
+}
+
+/* ===============================
+   Bold Styling
+   =============================== */
+.bold {
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* ===============================
+   List Item Styling
+   =============================== */
+li {
+    font-size: 14px;
+    font-style: oblique;
+}
+
+/* ===============================
+   External Stylesheet Link (this part will be in the HTML file)
+   =============================== */
+
+/* You would link this external stylesheet in your HTML file */
